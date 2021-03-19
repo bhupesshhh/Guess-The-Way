@@ -11,7 +11,8 @@ Game Syntax:
 
 I used import, function, input, print, while and nested loops to create a simple puzzle game.
 
-imports = Random Module for random stage setup and random answer
-input = for name,age, answers for each stage
-functions = for stages (hill,jungle,lake,river)
-loops = Nested loop for gameplay
+Contents:
+1. imports = Random Module for random stage setup and random answer
+2. input = for name,age, answers for each stage
+3. functions = for stages (hill,jungle,lake,river)
+4. loops = Nested loop for gameplay
