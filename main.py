@@ -1,9 +1,5 @@
 import random
 
-
-# Set The Initial Game Values
-game_on = False
-
 # Stage Jungle
 def jungle():
   global game_on
@@ -68,7 +64,10 @@ def lake():
     game_on = False
     print("Wrong guess, your choice is incorrect!")
 
-# Gameplay 
+# Set The Initial Game Values
+gameplay = False
+game_on = False
+
 print("Welcome to this word game called..\n")
 print("GUESS THE WAY!!!\n")
 name = input("What is your name? ")
