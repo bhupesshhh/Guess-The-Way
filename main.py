@@ -2,8 +2,6 @@ import random
 
 
 # Set The Initial Game Values
-points = 0
-round = 0
 game_on = False
 
 # Stage Jungle
@@ -86,6 +84,7 @@ if age > 10:
   if gameplay.lower() == 'yes':
     print("Let's start the game.\n")
     game_on = True
+    gameplay = True
   else:
     print("We hope to see you soon.") 
 else:
@@ -96,30 +95,45 @@ else:
 stage = [lake,jungle,river,hill]
 
 # Gameplay
-while game_on:
-  print(f"Round: {round}")
+while gameplay:
 
-  stage_play = random.choice(stage)
-  stage_play()
+  points = 0
+  round = 0
 
-  if game_on == False:
-    break
+  while game_on:
+    print(f"Round: {round}")
+
+    stage_play = random.choice(stage)
+    stage_play()
+
+    if game_on == False:
+      break
+    else:
+      points += 10
+
+    print(f"Score:{points}\n")
+    round += 1
+
+    if round == 20:
+      game_on = False
+      print("You won the game!")
+      break
+
+  # Final Gameplay Scores
+  print("\n")
+  print(f"Thanks for joining {name}.")
+  if round < 20:
+    print(f"You comepletd {round} rounds.")
   else:
-    points += 10
+    print("You comepleted all rounds.")
+  print(f"Your final score is {points}\n")
 
-  print(f"Score:{points}\n")
-  round += 1
+  replay = input("Do you want to play again? (yes/no) ")
+  if replay == "yes":
+    gameplay = True
+    game_on = True
+    print("\n")
+  else:
+    gameplay = False
 
-  if round == 20:
-    game_on = False
-    print("You won the game!")
-    break
-
-# Final Gameplay Scores
-print("\n")
-print(f"Thanks for joining {name}.")
-if round < 20:
-  print(f"You comepletd {round} rounds.")
-else:
-  print("You comepleted all rounds.")
-print(f"Your final score is {points}")
+print("Thanks for playing the game!")
